@@ -48,6 +48,8 @@ class App extends React.Component{
                   <h6>Menerima Gaji</h6>
                   <span className='title'>1 Juli</span>
                 </div>
+
+                
               </div>
               <h5 className='money'>Rp1.000.000,-</h5>
             </div>
