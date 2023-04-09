@@ -3,3 +3,108 @@
 *{
   font-family: 'Poppins', sans-serif;
 }
+h1{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  /* identical to box height */
+
+
+  background: linear-gradient(267.81deg, #3C3DBF 1.92%, #2998FF 106.64%) ;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+h2{
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 20px;
+  color: #302727;
+}
+h3{
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px !important;
+ 
+  color: #454545;
+}
+.title-md{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12px !important;
+
+  color: #A1A1A1;
+}
+.title-sm{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px !important;
+
+  color: #A1A1A1;
+}
+.card-wraper{
+  background: #FFFFFF;
+  border: 1px solid #F4F4F4;
+  box-shadow: 0px 6px 30px rgba(206, 206, 206, 0.25);
+  border-radius: 14px;
+}
+.icon-wraper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+
+  width: 35px;
+  height: 35px;
+
+  background: #E4E5FF;
+  border-radius: 6px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.text-ungu{
+  color: #3C3DBF;
+}
+h4{
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #3C3DBF;
+}
+h6{
+  font-weight: 400 !important;
+  font-size: 14px;
+  line-height: 16px;
+  color: #454545;
+}
+h5{
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+}
+.button{
+  border-radius: 8px;
+  border: none;
+  color: #E4E5FF;
+}
+.btn-ungu{
+  background: #3C3DBF;
+}
+.btn-pink{
+  background: #FF3666;
+}
+.money-in{
+  font-weight: 600 !important;
+  color: #3C3DBF;
+}
+.money-out{
+  color: #FF3666;
+  font-weight: 600 !important;
+}
