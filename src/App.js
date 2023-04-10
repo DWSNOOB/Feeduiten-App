@@ -3,9 +3,32 @@ import './App.css';
 import React from 'react';
 
 class App extends React.Component{
-  // constructor(){
-  //   super();
-  // }
+  constructor(){
+    super();
+
+    this.state ={
+      sisaUang : 0,
+      persenUang : 0,
+      uangMasuk : 0,
+      uangKeluar : 0,
+      transaksiIn : 0,
+      transaksiOut :0,
+      summary : [
+        {
+          deskripsi : 'Menerima Gaji',
+          tanggal : '1 April 2023',
+          nominal : 1000000,
+          category : 'IN'
+        },
+        {
+          deskripsi : 'Beli Rokok',
+          tanggal : '3 April 2023',
+          nominal : 30000,
+          category : 'OUT'
+        },
+      ]
+    }
+  }
   render(){
     return (
       <>
@@ -14,7 +37,7 @@ class App extends React.Component{
               <div className='col-12 text-center'>
                  <h1>Feeduiten App</h1>
                  <hr className='w-75 mx-auto'></hr>
-                 <h2>Rp.1.500.00,-</h2>
+                 <h2>Rp. {this.state.sisaUang},- </h2>
                  <span className='title-md'>Sisa uang yang tersisa 75%</span>
               </div>
           </div>
@@ -25,7 +48,7 @@ class App extends React.Component{
                     <i class="bi bi-wallet2"></i>
                   </div>
                   <span className='title-sm '>Pemasukan</span>
-                  <h3>Rp. 2.000.000,-</h3>
+                  <h3>Rp. {this.state.uangMasuk},-</h3>
                   <span className='title-sm text-ungu'>50 </span><span className='title-sm'>Transaksi</span>
               </div>
             </div>  
@@ -35,7 +58,7 @@ class App extends React.Component{
                     <i class="bi bi-cash"></i>
                   </div>
                   <span className='title-sm '>Pengeluaran</span>
-                  <h3>Rp. 2.000.000,-</h3>
+                  <h3>Rp.{this.state.uangKeluar},-</h3>
                   <span className='title-sm text-ungu'>50 </span><span className='title-sm'>Transaksi</span>
               </div>
               
@@ -54,18 +77,23 @@ class App extends React.Component{
 
           </div>
           <div className='row mt-4'>
-            <div className='col-12 d-flex justify-content-between align-items-center'>
-              <div className='d-flex align-items-center'>
-                <div className='icon-wraper'>
-                <i class="bi bi-wallet2"></i>
+            {this.state.summary.map((sum) => {
+              return(
+                <div className='mb-3 col-12 d-flex justify-content-between align-items-center'>
+                  <div className='d-flex align-items-center'>
+                    <div className={sum.category === 'IN' ? 'icon-wrapper-in' : 'icon-wrapper-out'}>
+                    <i class={sum.category === 'IN' ? 'bi bi-wallet2' : 'bi-bag-dash'}></i>
+                    </div>
+                    <div className='transaksi ms-3 d-flex flex-column'>
+                      <h6>{sum.deskripsi}</h6>
+                      <span className='title-sm'>{sum.tanggal}</span>
+                    </div>
+                  </div>
+                  <h5 className={sum.category === 'IN' ? 'money-in' : 'money-out'}>Rp.{sum.nominal},-</h5>
                 </div>
-                <div className='transaksi ms-3 d-flex flex-column'>
-                  <h6>Menerima Gaji</h6>
-                  <span className='title-sm'>1 Juli</span>
-                </div>
-              </div>
-              <h5 className='money-in'>Rp1.000.000,-</h5>
-            </div>
+              )
+            })}
+            
           </div>
         </div>
       </>
